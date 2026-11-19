@@ -222,6 +222,19 @@
     draw();
   });
 
+  /* ---------- quote form (FormSubmit) ---------- */
+  const form = $("#quote-form");
+  if (form) {
+    const next = $('input[name="_next"]', form);
+    if (next) next.value = new URL("thanks.html", location.href).href;   // works on any host / domain
+    form.addEventListener("submit", () => {
+      $('input[name="Services"]', form).value =
+        $$("input[data-service]:checked", form).map(c => c.value).join(", ") || "—";
+      const btn = $('button[type="submit"]', form);
+      if (btn) { btn.disabled = true; btn.style.opacity = .7; }
+    });
+  }
+
   /* ---------- year ---------- */
   $$("[data-year]").forEach(el => el.textContent = new Date().getFullYear());
 })();

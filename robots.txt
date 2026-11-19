@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /_dev/
 
-Sitemap: https://lumoradigitals.netlify.app/sitemap.xml
+Sitemap: https://hamzehabunemeh.github.io/lumora-website/sitemap.xml

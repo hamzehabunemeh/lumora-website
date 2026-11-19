@@ -7,14 +7,14 @@
 <title data-key="contact.title">Contact & Request a Quote — LUMORA</title>
 <meta name="description" data-key="contact.desc" content="Get in touch with LUMORA in Amman, Jordan. Request a quote for websites, marketing, design, social media, SEO or branding.">
 <meta name="theme-color" content="#03050a">
-<link rel="canonical" href="https://lumoradigitals.netlify.app/contact.html">
-<link rel="alternate" hreflang="en" href="https://lumoradigitals.netlify.app/contact.html">
+<link rel="canonical" href="https://hamzehabunemeh.github.io/lumora-website/contact.html">
+<link rel="alternate" hreflang="en" href="https://hamzehabunemeh.github.io/lumora-website/contact.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="LUMORA">
 <meta property="og:title" content="Contact &amp; Request a Quote — LUMORA">
 <meta property="og:description" content="Get in touch with LUMORA in Amman, Jordan. Request a quote for websites, marketing, design, social media, SEO or branding.">
-<meta property="og:image" content="https://lumoradigitals.netlify.app/assets/img/brand/og.jpg">
-<meta property="og:url" content="https://lumoradigitals.netlify.app/contact.html">
+<meta property="og:image" content="https://hamzehabunemeh.github.io/lumora-website/assets/img/brand/og.jpg">
+<meta property="og:url" content="https://hamzehabunemeh.github.io/lumora-website/contact.html">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" type="image/png" sizes="48x48" href="assets/img/brand/favicon-48.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/img/brand/favicon-32.png">
@@ -68,16 +68,20 @@
   <div class="card form-card" data-reveal>
    <h2 class="h-md" data-i18n="fm.title">Request a Quote</h2>
    <p data-i18n="fm.lead">Fill in the form and we'll get back to you shortly.</p>
-   <form name="quote" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
-    <input type="hidden" name="form-name" value="quote">
-    <p class="hp"><label>Don't fill this out: <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
+   <form id="quote-form" method="POST" action="https://formsubmit.co/lumoradigitalsjo@gmail.com">
+    <input type="hidden" name="_subject" value="New quote request — LUMORA website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="https://hamzehabunemeh.github.io/lumora-website/thanks.html">
+    <input type="hidden" name="Services" value="">
+    <p class="hp"><label>Don't fill this out: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
     <div class="form-grid">
-     <div class="field"><label for="f-name" data-i18n="fm.name">Full name</label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="Your name" data-i18n-attr="placeholder:fm.name.ph"></div>
+     <div class="field"><label for="f-name" data-i18n="fm.name">Full name</label><input id="f-name" name="Name" type="text" autocomplete="name" required placeholder="Your name" data-i18n-attr="placeholder:fm.name.ph"></div>
      <div class="field"><label for="f-email" data-i18n="fm.email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="you@company.com"></div>
-     <div class="field"><label for="f-phone" data-i18n="fm.phone">Phone / WhatsApp</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+962 7X XXX XXXX"></div>
-     <div class="field"><label for="f-biz" data-i18n="fm.biz">Business name</label><input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="Optional" data-i18n-attr="placeholder:fm.biz.ph"></div>
-     <fieldset class="field full"><legend data-i18n="fm.services">Which services are you interested in?</legend><div class="checks"><label class="check"><input type="checkbox" name="services[]" value="Web Design & Development"><span data-i18n="opt.s1">Website</span></label><label class="check"><input type="checkbox" name="services[]" value="Digital Marketing"><span data-i18n="opt.s2">Digital Marketing</span></label><label class="check"><input type="checkbox" name="services[]" value="Graphic Design"><span data-i18n="opt.s3">Graphic Design</span></label><label class="check"><input type="checkbox" name="services[]" value="Social Media Management"><span data-i18n="opt.s4">Social Media</span></label><label class="check"><input type="checkbox" name="services[]" value="SEO & Performance"><span data-i18n="opt.s5">SEO</span></label><label class="check"><input type="checkbox" name="services[]" value="Branding & Strategy"><span data-i18n="opt.s6">Branding</span></label></div></fieldset>
-     <div class="field full"><label for="f-msg" data-i18n="fm.msg">Tell us about your project</label><textarea id="f-msg" name="message" required placeholder="Your goals, timeline, anything that helps us understand what you need…" data-i18n-attr="placeholder:fm.msg.ph"></textarea></div>
+     <div class="field"><label for="f-phone" data-i18n="fm.phone">Phone / WhatsApp</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="+962 7X XXX XXXX"></div>
+     <div class="field"><label for="f-biz" data-i18n="fm.biz">Business name</label><input id="f-biz" name="Business" type="text" autocomplete="organization" placeholder="Optional" data-i18n-attr="placeholder:fm.biz.ph"></div>
+     <fieldset class="field full"><legend data-i18n="fm.services">Which services are you interested in?</legend><div class="checks"><label class="check"><input type="checkbox" data-service value="Web Design & Development"><span data-i18n="opt.s1">Website</span></label><label class="check"><input type="checkbox" data-service value="Digital Marketing"><span data-i18n="opt.s2">Digital Marketing</span></label><label class="check"><input type="checkbox" data-service value="Graphic Design"><span data-i18n="opt.s3">Graphic Design</span></label><label class="check"><input type="checkbox" data-service value="Social Media Management"><span data-i18n="opt.s4">Social Media</span></label><label class="check"><input type="checkbox" data-service value="SEO & Performance"><span data-i18n="opt.s5">SEO</span></label><label class="check"><input type="checkbox" data-service value="Branding & Strategy"><span data-i18n="opt.s6">Branding</span></label></div></fieldset>
+     <div class="field full"><label for="f-msg" data-i18n="fm.msg">Tell us about your project</label><textarea id="f-msg" name="Message" required placeholder="Your goals, timeline, anything that helps us understand what you need…" data-i18n-attr="placeholder:fm.msg.ph"></textarea></div>
     </div>
     <div class="form-foot">
      <small data-i18n="fm.note">By sending this form you agree to our <a href="privacy.html">Privacy Policy</a>.</small>

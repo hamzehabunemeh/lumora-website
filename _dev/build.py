@@ -5,7 +5,7 @@ import json, os, re, html as H
 from content import C
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-SITE = "https://lumoradigitals.netlify.app"
+SITE = "https://hamzehabunemeh.github.io/lumora-website"
 PHONE = "+962779230903"; PHONE_TXT = "+962 77 923 0903"
 WA = "https://wa.me/962779230903"
 EMAIL = "lumoradigitalsjo@gmail.com"
@@ -424,7 +424,7 @@ def contact():
     def item(href, ic, lk, val, ext=False):
         tg = ' target="_blank" rel="noopener"' if ext else ""
         return f'<a class="card contact-item" href="{href}"{tg} data-reveal><span class="icon">{I[ic]}</span><span><small data-i18n="{lk}">{en(lk)}</small><strong>{val}</strong></span></a>'
-    checks="".join(f'<label class="check"><input type="checkbox" name="services[]" value="{strip(en(s+".t"))}"><span data-i18n="opt.{s}">{en("opt."+s)}</span></label>' for s,_,_ in SERVICES)
+    checks="".join(f'<label class="check"><input type="checkbox" data-service value="{strip(en(s+".t"))}"><span data-i18n="opt.{s}">{en("opt."+s)}</span></label>' for s,_,_ in SERVICES)
     main = page_hero("ct.eyebrow","ct.h1","ct.lead") + f'''
 <section class="section" id="quote">
  <div class="wrap contact-grid">
@@ -438,16 +438,20 @@ def contact():
   <div class="card form-card" data-reveal>
    {t("fm.title","h2","h-md")}
    {t("fm.lead","p")}
-   <form name="quote" method="POST" action="/thanks.html" data-netlify="true" netlify-honeypot="company-website">
-    <input type="hidden" name="form-name" value="quote">
-    <p class="hp"><label>Don't fill this out: <input name="company-website" tabindex="-1" autocomplete="off"></label></p>
+   <form id="quote-form" method="POST" action="https://formsubmit.co/{EMAIL}">
+    <input type="hidden" name="_subject" value="New quote request — LUMORA website">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_next" value="{SITE}/thanks.html">
+    <input type="hidden" name="Services" value="">
+    <p class="hp"><label>Don't fill this out: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
     <div class="form-grid">
-     <div class="field"><label for="f-name" data-i18n="fm.name">{en("fm.name")}</label><input id="f-name" name="name" type="text" autocomplete="name" required placeholder="{en("fm.name.ph")}" data-i18n-attr="placeholder:fm.name.ph"></div>
+     <div class="field"><label for="f-name" data-i18n="fm.name">{en("fm.name")}</label><input id="f-name" name="Name" type="text" autocomplete="name" required placeholder="{en("fm.name.ph")}" data-i18n-attr="placeholder:fm.name.ph"></div>
      <div class="field"><label for="f-email" data-i18n="fm.email">{en("fm.email")}</label><input id="f-email" name="email" type="email" autocomplete="email" required placeholder="{en("fm.email.ph")}"></div>
-     <div class="field"><label for="f-phone" data-i18n="fm.phone">{en("fm.phone")}</label><input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="{en("fm.phone.ph")}"></div>
-     <div class="field"><label for="f-biz" data-i18n="fm.biz">{en("fm.biz")}</label><input id="f-biz" name="business" type="text" autocomplete="organization" placeholder="{en("fm.biz.ph")}" data-i18n-attr="placeholder:fm.biz.ph"></div>
+     <div class="field"><label for="f-phone" data-i18n="fm.phone">{en("fm.phone")}</label><input id="f-phone" name="Phone" type="tel" autocomplete="tel" placeholder="{en("fm.phone.ph")}"></div>
+     <div class="field"><label for="f-biz" data-i18n="fm.biz">{en("fm.biz")}</label><input id="f-biz" name="Business" type="text" autocomplete="organization" placeholder="{en("fm.biz.ph")}" data-i18n-attr="placeholder:fm.biz.ph"></div>
      <fieldset class="field full"><legend data-i18n="fm.services">{en("fm.services")}</legend><div class="checks">{checks}</div></fieldset>
-     <div class="field full"><label for="f-msg" data-i18n="fm.msg">{en("fm.msg")}</label><textarea id="f-msg" name="message" required placeholder="{en("fm.msg.ph")}" data-i18n-attr="placeholder:fm.msg.ph"></textarea></div>
+     <div class="field full"><label for="f-msg" data-i18n="fm.msg">{en("fm.msg")}</label><textarea id="f-msg" name="Message" required placeholder="{en("fm.msg.ph")}" data-i18n-attr="placeholder:fm.msg.ph"></textarea></div>
     </div>
     <div class="form-foot">
      <small data-i18n="fm.note">{en("fm.note")}</small>
